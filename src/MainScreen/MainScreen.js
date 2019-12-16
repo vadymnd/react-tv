@@ -11,12 +11,17 @@ const MainScreen = ({ setScreen, isMainScreen, setApiUrl, setStringDate }) => {
 
   const handleOnChangeApiUrl = (startDate) => {
     const months = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]
-    const stringDate = startDate.toLocaleDateString().split('.');
-    const dd = stringDate[0];
-    const mm = stringDate[1];
-    const yyyy = stringDate[2]
+    let dd = startDate.getDate();
+    if (dd < 10) {
+      dd = "0" + dd;
+    };
+    let mm = startDate.getMonth() + 1;
+    if (mm < 10) {
+      mm = "0" + mm
+    }
+    const yyyy = startDate.getFullYear();    
+    setStringDate(`${+dd} ${months[+mm - 1]} ${yyyy}`);
     setApiUrl(`https://api.tvmaze.com/schedule?country=US&date=${yyyy}-${mm}-${dd}`);
-    setStringDate(`${dd} ${months[mm - 1]} ${yyyy}`);
   }
 
   const handleOnChangeDate = (date) => {
