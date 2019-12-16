@@ -1,0 +1,550 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+  vertical-align: baseline;
+}
+button, 
+button:active, 
+button:focus {
+    outline: none;
+}
+html {
+  max-width: 750px !important;
+}
+html::-webkit-scrollbar { width: 0; }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  max-width: 750px;
+  font-family: 'Open Sans', sans-serif !important;
+
+  .header {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    letter-spacing: 1px;
+    width: 100vw;
+    max-width: 750px;
+    height: 105px;
+    line-height: 105px;
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 2px solid #e9e9e9;
+    background: url('./img/header_background.png');
+
+    &__back-btn {
+      z-index: 999;
+      cursor: pointer;
+      position: fixed;
+      top: 36.5px;
+      left: 5.6vw;
+      border: none;
+      background-color: transparent;
+      background: url('./img/back-btn.png') no-repeat;
+      height: 34px;
+      width: 20px;
+      padding: 0;
+    }
+  }
+
+  .main {
+    margin-top: 107px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__container { 
+      display: flex;
+      align-items: center;
+      padding: 90px 14vw 90px;
+      flex-direction: column;
+
+      &__img {
+        width: 300px;
+        height: 225px;
+        margin-bottom: 58px;
+      }
+      &__text {
+        color: #333333;
+        width: 100%;
+        text-align: center;
+        line-height: 32px;
+        font-size: 30px;
+      }
+    }
+  }
+}
+.__react_modal_image__icon_menu a:first-of-type {
+  display: none !important;
+}
+.react-datepicker {
+  width: 100vw;
+  max-width: 750px;
+  bottom: 0;
+  border-radius: unset !important;
+  border: unset !important;
+  border-top: 1px solid #aeaeae !important;
+  border-bottom: 1px solid #aeaeae !important;
+  font-family: 'Open Sans', sans-serif !important;
+
+  &__header {
+    height: 96px !important;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 0 !important;
+    background-color: #f1f1f1 !important;
+    border-color: #e9e9e9 !important;
+    border-radius: unset !important;
+
+    &__dropdown {
+      display: none !important;
+    }
+  }
+  &__navigation {
+    border: unset !important;
+    top: 34px !important;
+    background: url(./img/btn.png) !important;
+    height: 28px !important;
+    width: 20px !important;
+  }
+  &__navigation--next {
+    border-left-color: #72797f !important; 
+    transform: rotate(180deg);
+    right: 27px !important;
+  }
+  &__navigation--previous {
+    border-right-color: #72797f !important;
+    left: 27px !important;
+  }
+  &__navigation--next:hover {
+    background: url(./img/btn-hover.png) !important;
+    transform: rotate(0deg);
+  }
+  &__navigation--previous:hover {
+    background: url(./img/btn-hover.png) !important;
+    transform: rotate(180deg);
+  }
+
+  &__current-month {
+    line-height: 96px !important;
+    font-size: 36px !important;
+    color: #333333 !important;
+    font-weight: unset !important;
+    text-transform: capitalize;
+  }
+
+  &__month-container {
+    width: 100vw;
+    max-width: 750px;
+    border-radius: unset !important;
+    border: unset !important;
+
+  }
+  &__day {
+    box-sizing: border-box;
+    border: 1px solid #d0d4d9;
+    border-radius: 0!important;
+    margin: 0 !important;
+    width: 14.2857vw !important;
+    max-width: 107.14px;
+    height: 14.2857vw;
+    max-height: 107.14px;
+    line-height: 14.2857vw!important;
+    font-size: 37.49px;
+    color: #4d5155 !important;
+    
+    &--outside-month {
+      color: #cccfd3 !important;
+    }
+    
+    &--today {
+      font-weight: unset !important;
+    }
+
+    &--selected {
+      background-color: #eef1f5 !important;
+      color: #333 !important;
+      border: 1px solid #e10246;
+      box-sizing: border-box;
+      font-weight: bold !important;
+    }
+
+    &-names {
+      display: none;
+    } 
+  } 
+  &__day:hover {
+    background-color: #eef1f5 !important;
+  }
+  &__month {
+    margin: 0 !important;
+    width: 100vw;
+    max-width: 750px;
+  }
+}
+
+.episodes {
+
+  &__date {
+    height: 100px;
+    line-height: 100px;
+    width: 100vw;
+    max-width: 750px;
+    border-bottom: 1px solid #e9e9e9;
+    font-size: 30px;
+    color: #333333;
+    text-align: center;
+    margin-top: 107px;
+    font-weight: 600;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5.6vw;
+
+    &__show {
+      cursor: pointer;
+      border: 2px solid #d6d6d6;
+      border-radius: 10px;
+      text-align: center;
+      width: 100%;
+      height: 77px;
+      line-height: 77px;
+      font-size: 26px;
+      color: #999999;
+      margin: 60px 0;
+      box-sizing: border-box;
+      &--less {
+        svg {
+          margin-left: 15px;
+        }
+      }
+      &--more {
+        svg {
+          margin-left: 15px;
+          transform: rotate(180deg);
+        }
+      }
+    }
+    &__show:hover {
+      background-color: #eef1f5;
+    }
+
+    &__item {
+      margin-top: 59px;
+      display: flex;
+
+      &__img {
+        height: 200px;
+        width: 135px;
+        max-width: 135px !important;
+        border-radius: 5px;
+        box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, .2);
+      }
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        margin-left: 40px;
+        position: relative;
+
+        &__title {
+          font-size: 30px;
+          color: #333333;
+          margin-bottom: 16px;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          line-height: 36px;
+        }
+
+        &__year {
+          font-size: 26px;
+          color: #b4b4b4;
+          margin-bottom: 55px;
+          font-weight: 600;
+        }
+
+        &__season {
+          position: absolute;
+          bottom: 0;
+          line-height: 81px;
+          text-align: center;
+          min-width: 324px;
+          max-width: 347px;
+          white-space: nowrap;
+          border-radius: 10px; 
+          background-color: #f5f5f5;
+          color: #999999;
+          font-size: 26px;
+          font-weight: 600;
+
+        }
+      }
+    }
+  }
+}
+
+
+
+
+@media (max-width: 570px) {
+  .App {
+
+    .header {
+      font-size: 40px;
+
+      &__back-btn {
+        left: 5.6vw;
+      }
+    }
+  }
+
+  .react-datepicker {
+    &__day {
+      font-size: 33px;
+    }
+  }
+
+  .episodes {
+    &__date {
+      font-size: 26px;
+    }
+
+    &__list {
+      &__item {
+        &__img {
+          height: auto;
+          width: 23.68vw;
+        }
+        &__text {
+          &__title {
+            font-size: 22px;
+          }
+          &__year {
+            font-size: 15px;
+          }
+          &__season {
+            font-size: 16px;
+            line-height: 62px;
+            min-width: 222px;
+            max-width: 222px;
+          }
+        }
+      }
+    }
+  }
+}
+[isshow="true"] {
+  display: flex;
+}
+[isshow="false"] {
+  display: none;
+}
+span[isshow="true"] {
+  display: block;
+}
+span[isshow="false"] {
+  display: block;
+}
+
+@media (max-width: 500px) {
+  .App {
+
+    .header {
+      font-size: 35px;
+    }
+
+    .main {
+      &__container {
+        &__text {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+
+  .react-datepicker {
+    &__current {
+      &-month {
+        font-size: 35px !important;
+      }
+    }
+    &__day {
+      font-size: 29px;
+    }
+  }
+  .episodes {
+    &__list {
+      &__item {
+        &__text {
+          &__year {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .App {
+
+    .main {
+      &__container {
+        padding: 45px 10vw;
+
+        &__img {
+          width: auto;
+          height: auto;
+          margin-bottom: 30px;
+        }
+      }
+    }
+
+    .episodes {
+      &__date {
+        font-size: 23px;
+        line-height: 70px;
+        height: 70px;
+      }
+      &__list {
+        &__item {
+          &__text {
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .App {
+
+    .main {
+      &__container {
+        padding: 45px 10vw;
+
+        &__img {
+          width: 75vw;
+          height: auto;
+          margin-bottom: 30px;
+        }
+
+        &__text {
+          font-size: 24px;
+        }
+      }
+    }
+    .episodes {
+      &__list {
+        &__item {
+          &__text {
+            &__season {
+              position: relative;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 376px) {
+  .App {
+    .header {
+      &__back-btn {
+        left: 3.6vw;
+      }
+    }
+    .main {
+      &__container {
+        padding: 35px 5vw;
+      }
+    }
+  }
+  .react-datepicker {
+    &__header {
+      height: 80px !important;
+    }
+    &__navigation {
+      top: 30px !important;
+      height: 20px !important;
+      width: 13px !important;
+      background-size: cover !important;
+    }
+    &__navigation:hover{
+      background-size: cover !important;
+    }
+    &__day {
+      font-size: 24px;
+    }
+    &__current-month {
+      line-height: 80px !important;
+        font-size: 30px !important;
+    }
+  }
+  .episodes {
+    &__list {
+      padding: 3.6vw;
+      &__item {
+        &__text {
+          &__season {
+            line-height: 52px;
+          }
+        }
+      }
+    }
+  }
+}

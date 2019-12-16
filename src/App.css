@@ -1,0 +1,539 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+button,
+button:active,
+button:focus {
+  outline: none;
+}
+
+html {
+  max-width: 750px !important;
+}
+
+html::-webkit-scrollbar {
+  width: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100vw;
+  max-width: 750px;
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+.App .header {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  letter-spacing: 1px;
+  width: 100vw;
+  max-width: 750px;
+  height: 105px;
+  line-height: 105px;
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 2px solid #e9e9e9;
+  background: url("./img/header_background.png");
+}
+
+.App .header__back-btn {
+  z-index: 999;
+  cursor: pointer;
+  position: fixed;
+  top: 36.5px;
+  left: 5.6vw;
+  border: none;
+  background-color: transparent;
+  background: url("./img/back-btn.png") no-repeat;
+  height: 34px;
+  width: 20px;
+  padding: 0;
+}
+
+.App .main {
+  margin-top: 107px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .main__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 90px 14vw 90px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .main__container__img {
+  width: 300px;
+  height: 225px;
+  margin-bottom: 58px;
+}
+
+.App .main__container__text {
+  color: #333333;
+  width: 100%;
+  text-align: center;
+  line-height: 32px;
+  font-size: 30px;
+}
+
+.__react_modal_image__icon_menu a:first-of-type {
+  display: none !important;
+}
+
+.react-datepicker {
+  width: 100vw;
+  max-width: 750px;
+  bottom: 0;
+  border-radius: unset !important;
+  border: unset !important;
+  border-top: 1px solid #aeaeae !important;
+  border-bottom: 1px solid #aeaeae !important;
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+.react-datepicker__header {
+  height: 96px !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 0 !important;
+  background-color: #f1f1f1 !important;
+  border-color: #e9e9e9 !important;
+  border-radius: unset !important;
+}
+
+.react-datepicker__header__dropdown {
+  display: none !important;
+}
+
+.react-datepicker__navigation {
+  border: unset !important;
+  top: 34px !important;
+  background: url(./img/btn.png) !important;
+  height: 28px !important;
+  width: 20px !important;
+}
+
+.react-datepicker__navigation--next {
+  border-left-color: #72797f !important;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  right: 27px !important;
+}
+
+.react-datepicker__navigation--previous {
+  border-right-color: #72797f !important;
+  left: 27px !important;
+}
+
+.react-datepicker__navigation--next:hover {
+  background: url(./img/btn-hover.png) !important;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.react-datepicker__navigation--previous:hover {
+  background: url(./img/btn-hover.png) !important;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.react-datepicker__current-month {
+  line-height: 96px !important;
+  font-size: 36px !important;
+  color: #333333 !important;
+  font-weight: unset !important;
+  text-transform: capitalize;
+}
+
+.react-datepicker__month-container {
+  width: 100vw;
+  max-width: 750px;
+  border-radius: unset !important;
+  border: unset !important;
+}
+
+.react-datepicker__day {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #d0d4d9;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  width: 14.2857vw !important;
+  max-width: 107.14px;
+  height: 14.2857vw;
+  max-height: 107.14px;
+  line-height: 14.2857vw !important;
+  font-size: 37.49px;
+  color: #4d5155 !important;
+}
+
+.react-datepicker__day--outside-month {
+  color: #cccfd3 !important;
+}
+
+.react-datepicker__day--today {
+  font-weight: unset !important;
+}
+
+.react-datepicker__day--selected {
+  background-color: #eef1f5 !important;
+  color: #333 !important;
+  border: 1px solid #e10246;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: bold !important;
+}
+
+.react-datepicker__day-names {
+  display: none;
+}
+
+.react-datepicker__day:hover {
+  background-color: #eef1f5 !important;
+}
+
+.react-datepicker__month {
+  margin: 0 !important;
+  width: 100vw;
+  max-width: 750px;
+}
+
+.episodes__date {
+  height: 100px;
+  line-height: 100px;
+  width: 100vw;
+  max-width: 750px;
+  border-bottom: 1px solid #e9e9e9;
+  font-size: 30px;
+  color: #333333;
+  text-align: center;
+  margin-top: 107px;
+  font-weight: 600;
+}
+
+.episodes__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 5.6vw;
+}
+
+.episodes__list__show {
+  cursor: pointer;
+  border: 2px solid #d6d6d6;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  height: 77px;
+  line-height: 77px;
+  font-size: 26px;
+  color: #999999;
+  margin: 60px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.episodes__list__show--less svg {
+  margin-left: 15px;
+}
+
+.episodes__list__show--more svg {
+  margin-left: 15px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.episodes__list__show:hover {
+  background-color: #eef1f5;
+}
+
+.episodes__list__item {
+  margin-top: 59px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.episodes__list__item__img {
+  height: 200px;
+  width: 135px;
+  max-width: 135px !important;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.2);
+}
+
+.episodes__list__item__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-decoration: none;
+  margin-left: 40px;
+  position: relative;
+}
+
+.episodes__list__item__text__title {
+  font-size: 30px;
+  color: #333333;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 36px;
+}
+
+.episodes__list__item__text__year {
+  font-size: 26px;
+  color: #b4b4b4;
+  margin-bottom: 55px;
+  font-weight: 600;
+}
+
+.episodes__list__item__text__season {
+  position: absolute;
+  bottom: 0;
+  line-height: 81px;
+  text-align: center;
+  min-width: 324px;
+  max-width: 347px;
+  white-space: nowrap;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  color: #999999;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+@media (max-width: 570px) {
+  .App .header {
+    font-size: 40px;
+  }
+  .App .header__back-btn {
+    left: 5.6vw;
+  }
+  .react-datepicker__day {
+    font-size: 33px;
+  }
+  .episodes__date {
+    font-size: 26px;
+  }
+  .episodes__list__item__img {
+    height: auto;
+    width: 23.68vw;
+  }
+  .episodes__list__item__text__title {
+    font-size: 22px;
+  }
+  .episodes__list__item__text__year {
+    font-size: 15px;
+  }
+  .episodes__list__item__text__season {
+    font-size: 16px;
+    line-height: 62px;
+    min-width: 222px;
+    max-width: 222px;
+  }
+}
+
+[isshow="true"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+[isshow="false"] {
+  display: none;
+}
+
+span[isshow="true"] {
+  display: block;
+}
+
+span[isshow="false"] {
+  display: block;
+}
+
+@media (max-width: 500px) {
+  .App .header {
+    font-size: 35px;
+  }
+  .App .main__container__text {
+    font-size: 26px;
+  }
+  .react-datepicker__current-month {
+    font-size: 35px !important;
+  }
+  .react-datepicker__day {
+    font-size: 29px;
+  }
+  .episodes__list__item__text__year {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 430px) {
+  .App .main__container {
+    padding: 45px 10vw;
+  }
+  .App .main__container__img {
+    width: auto;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  .App .episodes__date {
+    font-size: 23px;
+    line-height: 70px;
+    height: 70px;
+  }
+  .App .episodes__list__item__text {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .App .main__container {
+    padding: 45px 10vw;
+  }
+  .App .main__container__img {
+    width: 75vw;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  .App .main__container__text {
+    font-size: 24px;
+  }
+  .App .episodes__list__item__text__season {
+    position: relative;
+  }
+}
+
+@media (max-width: 376px) {
+  .App .header__back-btn {
+    left: 3.6vw;
+  }
+  .App .main__container {
+    padding: 35px 5vw;
+  }
+  .react-datepicker__header {
+    height: 80px !important;
+  }
+  .react-datepicker__navigation {
+    top: 30px !important;
+    height: 20px !important;
+    width: 13px !important;
+    background-size: cover !important;
+  }
+  .react-datepicker__navigation:hover {
+    background-size: cover !important;
+  }
+  .react-datepicker__day {
+    font-size: 24px;
+  }
+  .react-datepicker__current-month {
+    line-height: 80px !important;
+    font-size: 30px !important;
+  }
+  .episodes__list {
+    padding: 3.6vw;
+  }
+  .episodes__list__item__text__season {
+    line-height: 52px;
+  }
+}
+/*# sourceMappingURL=App.css.map */
